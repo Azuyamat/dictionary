@@ -10,13 +10,20 @@ export default function useFetch<T>(url: string): {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    if (!url) {
+      setLoading(false);
+      setData(null);
+      setError(null);
+      return;
+    }
+
     const fetchData = async () => {
       setLoading(true);
       setError(null);
       try {
         const response = await fetch(url);
         if (!response.ok) {
-          throw new Error(`Error: ${response.statusText}`);
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
         const result: T = await response.json();
         setData(result);

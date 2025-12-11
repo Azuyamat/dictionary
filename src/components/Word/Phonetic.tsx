@@ -18,9 +18,11 @@ export default function Phonetic({ phonetic }: Props) {
 		}
 	};
 
+	const text = (phonetic.text ? phonetic.text : "").replace(/^\/|\/$/g, "");
+
 	return (
 		<>
-			{phonetic.text && <span className={styles.phonetic}>{phonetic.text} {phonetic.audio && (
+			{text && <span className={styles.phonetic}>{text} {phonetic.audio && (
 				<button 
 					type="button"
 					onClick={playAudio}

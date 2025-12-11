@@ -13,6 +13,7 @@ export function toIndependant(wordData: Word): IndependentWord[] {
 				example: definition.example || undefined,
 				synonyms: definition.synonyms,
 				antonyms: definition.antonyms,
+				sourceUrls: wordData.sourceUrls,
 			});
 		});
 	});

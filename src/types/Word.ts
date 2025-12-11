@@ -31,6 +31,7 @@ type IndependentWord = {
 	example?: string;
 	synonyms: string[];
 	antonyms: string[];
+	sourceUrls: string[];
 }
 
 export type { Word };
