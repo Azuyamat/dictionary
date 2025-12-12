@@ -9,7 +9,7 @@
 	font-size: 1.125rem;
 	font-family: 'PT Serif', serif;
 	outline: none;
-	transition: all 0.2s ease-in-out;
+	transition: border 0.2s ease-in-out;
 	box-sizing: border-box;
 }
 
@@ -26,4 +26,22 @@
 
 .input:hover {
 	border-color: var(--color-primary);
+}
+
+.input[data-special="true"] {
+	border-color: rgb(255, 88, 88);
+	box-shadow: 0 0 10px rgb(255, 88, 88);
+	animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 5px rgb(255, 88, 88);
+	}
+	50% {
+		box-shadow: 0 0 15px rgb(255, 0, 0);
+	}
+	100% {
+		box-shadow: 0 0 5px rgb(255, 88, 88);
+	}
 }

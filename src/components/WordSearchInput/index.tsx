@@ -29,6 +29,7 @@ export default function WordSearchInput({ value, onChange }: Props) {
 			value={value}
 			onChange={e => onChange(e.target.value)}
 			onKeyDown={handleKeyDown}
+			data-special={value.trim().toLowerCase() === "estelle"}
 		/>
 	)
 }

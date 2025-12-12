@@ -43,6 +43,21 @@ function DictionaryPage() {
     }
   };
 
+  if (debouncedWord.toLowerCase() === "estelle") {
+	return (
+	  <>
+	  	<h1>What word fascinates you?</h1>
+		<WordSearchInput value={urlWord || ""} onChange={handleWordChange} />
+		<div style={{marginTop: '20px', fontSize: '18px', color: '#555'}}>
+			<p>Estelle is the name of a very special person.</p>
+			<p><strong>Beautiful</strong>, <strong>intelligent</strong>, <strong>creative</strong>, and <strong>kind-hearted</strong>.</p>
+			<p>Just like the word "estelle" itself, she shines brightly in the lives of those around her.</p>
+			<p>Love you, Estelle!</p>
+		</div>
+	  </>
+	);
+  }
+
   return (
     <>
       <h1>What word fascinates you?</h1>
